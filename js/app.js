@@ -20,7 +20,11 @@ document.addEventListener('keyup', (e) => {
     const letterOnly = /[a-z]/
     let letter = e;
     let press = document.querySelectorAll('.key');
+    const overlay = document.getElementById('overlay');
     console.log(letter)
+    if (e.key === 'Enter' && overlay.style.display != 'none') {
+        game.startGame();
+    }
     if (letterOnly.test(letter.key)) {
         for (let i = 0; i < press.length; i++) {
             if (letter.key === press[i].innerText) {
